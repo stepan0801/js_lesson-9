@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 12</h1>
+		<p>Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			const finishPosition = 3
+			const firstImage = 1
+			const finishImage = 4
+			const firstWin = 100
+			const secondWin = 200
+			const thirdWin = 500
+			const fourthWin = 1000
+			let randomImage
+			let fruitImageCombination = ''
+
+			// 2. Робимо обчислення та виводимо результат
+			for (let i = 0; i < finishPosition; i++) {
+				randomImage = firstImage + Math.floor(Math.random() * (finishImage - firstImage + 1))
+						switch (randomImage) {
+							case 1: document.write(`<span class="fruit">aplle</span>`)
+							fruitImageCombination += 'aplle'
+								break;
+							case 2: document.write(`<span class="fruit">orange</span>`)
+							fruitImageCombination += 'orange'
+								break;
+							case 3: document.write(`<span class="fruit">lemon</span>`)
+							fruitImageCombination += 'lemon'
+								break;
+							case 4: document.write(`<span class="fruit">cherry</span>`)
+							fruitImageCombination += 'cherry'
+								break;
+						}	
+			}
+			
+			if(fruitImageCombination === 'aplleaplleaplle') document.write(`<p>Ви виграли ${firstWin}грн</p>`)
+		
+			else if	(fruitImageCombination ==='orangeorangeorange' ) document.write(`<p>Ви виграли ${secondWin}грн</p>`)
+			
+			else if	(fruitImageCombination === 'lemonlemonlemon' ) document.write(`<p>Ви виграли ${thirdWin}грн</p>`)
+			
+			else if(fruitImageCombination === 'cherrycherrycherry') document.write(`<p>Ви виграли ${fourthWin}грн</p>`)
+				else 	document.write(`<p>Нажміть F5 та спробуйте ще раз</p>`)
+				
+		</script>
+	</body>
+</html>

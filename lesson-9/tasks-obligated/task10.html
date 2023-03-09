@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 9</h1>
+		<p>Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.</p>
+		<script>
+			const arrayPrices = [25.30,105,1694,251.19,963,1400,21,5669.87,789,412,3,1579.62,19,2971,79,451.71,9741]
+			const tax = 0.2
+
+			function getCurrentArr(arrayPrices) {
+				const newArr = [];
+				arrayPrices.forEach((element, index, baseArrRef) => {
+					newArr.push(Math.round(baseArrRef[index] * tax * 100) / 100)
+				});
+				return newArr
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let currentArr = document.write(`<p>Дано масив:<br> ${arrayPrices}</p><p>Масив який  містить величину сплаченого податку у грн.:<br> ${getCurrentArr(arrayPrices)}</p>`)
+			
+			</script>
+
+	</body>
+</html>

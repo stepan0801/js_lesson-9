@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 8</h1>
+		<p>Дано одновимірний масив, у якому зберігається певна виграшна сума (елементи заповнюються випадковим чином значеннями від -500 до 500). Надаючи користувачу можливість вибирати номери елементів (поки він не відмовиться). Знаходити сумарний виграш.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			const maxArrQuantity = 15
+			let oneDemensionalArr =[]
+			for (let i = 0; i <maxArrQuantity; i++) {
+				let someWinSum = -500 + Math.floor(Math.random() * (500 - (-500) + 1));
+				oneDemensionalArr.push(someWinSum)
+			}
+			
+			let userWinSum = 0
+			let userChoice
+
+			
+			// 2. Робимо обчислення та виводимо результат
+			do {
+				userChoice = parseInt(prompt('Зробіть Ваш хід, обравши цифру ві д 1 до 15', '1 - 15'))
+				if(isFinite(userChoice)) 
+				userWinSum += oneDemensionalArr[userChoice-1]
+				
+			} while (isFinite(userChoice))
+
+			
+			document.write(`<p>Ваш результат складає: ${userWinSum}</p>`)
+
+		</script>
+
+	</body>
+</html>

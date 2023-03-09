@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 1</h1>
+		<p>Створити функцію, яка за номером місяця повертає його назву.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			function currentMonthName(month) {
+				switch (month) {
+					case 1: return "Січень"
+					case 2: return "Лютий"
+					case 3: return "Березень"
+					case 4: return "Квітень"
+					case 5: return "Травень"
+					case 6: return "Червень"
+					case 7: return "Липень"
+					case 8: return "Серпень"
+					case 9: return "Вересень"
+					case 10: return "Жовтень"
+					case 11: return "Листопад"
+					case 12: return "Грудень"
+					default: return "неіснуючий"
+				}
+			}
+			// 2. Робимо обчислення та виводимо результат 
+			const month = parseInt(prompt('Введіть порядковий номер місяця'))
+			const monthName = currentMonthName(month)
+			document.write(`<p>Зраз ${monthName} місяць</p>`)
+		</script>
+
+	</body>
+</html>

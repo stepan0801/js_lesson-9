@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 2</h1>
+		<p>Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран: <br>
+			номери днів, протягом яких кількість відвідувачів була меншою за 20; <br>
+			номери днів, коли кількість відвідувачів була мінімальною; <br>
+			номери днів, коли кількість відвідувачів була мінімальною; <br>
+			загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+		</p>
+		<script>
+		// 1. Вводимо необхідні дані
+			const daysWeek = 7
+			let customerQuantity = []
+			for (let i = 1; i <= daysWeek; i++) {
+				let customerDayQuantity = parseInt(prompt(`Введіть кількість відвідувачів за ${i}й день`))
+				customerQuantity.push(customerDayQuantity)
+			}
+
+			// 2. Створюємо функції
+			function getDaysSmaller_20(days) {
+				let numbers =[]
+				for (let i = 0; i < days.length; i++) {
+					if(days[i] < 20) numbers.push(i+1)
+					else numbers = "Таких днів немає"
+				}
+				return numbers
+			}
+			
+			function getDaysMin(days) {
+				let numbers =[]
+				for (let i = 0; i < days.length; i++) {
+					if(days[i] < 10) numbers.push(i+1)
+					else numbers = "Таких днів немає"
+				}
+				return numbers
+			}
+			function getDaysMax(days) {
+				let numbers =[]
+				for (let i = 0; i < days.length; i++) {
+					if(days[i] > 30) numbers.push(i+1)
+					else numbers = "Таких днів немає"
+				}
+				return numbers
+			}
+
+			function getCustomersWorkingDays(customers) {
+				let customerQuantityWorkingDays = 0
+				for (let i = 0; i <  customers.length - 2; i++) {
+					customerQuantityWorkingDays += customers[i];
+				}
+				return customerQuantityWorkingDays
+			}
+
+			function getCustomersDaysOff(customers) {
+				let customerQuantityDaysOff = 0
+				// const firstDayOff = 6
+				for (let i =  customers.length - 2; i < customers.length; i++) {
+					customerQuantityDaysOff += customers[i];
+				}
+				return customerQuantityDaysOff
+			}
+
+			//3. Обчисл.ємо та виводимо результат
+
+			let daysBigger_20 = getDaysSmaller_20(customerQuantity)
+			let daysMin = getDaysMin(customerQuantity)
+			let daysMax = getDaysMax(customerQuantity)
+			let customersWorkingDays = getCustomersWorkingDays(customerQuantity)
+			let customersDaysOff = getCustomersDaysOff(customerQuantity)
+			document.write(`
+			<p>номери днів, протягом яких кількість відвідувачів була меншою за 20: ${daysBigger_20}</p>
+			<p>номери днів, коли кількість відвідувачів була мінімальною: ${daysMin}</p>
+			<p>номери днів, коли кількість відвідувачів була максимальною: ${daysMax}</p>
+			<p>загальну кількість клієнтів у робочі дні: ${customersWorkingDays}</p>
+			<p>загальну кількість клієнтів на вихідних: ${customersDaysOff}</p>
+			`)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 9</h1>
+		<p>Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі кораблі.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let cellQuantity = parseInt(prompt(`введіть кількість клітнок для гри`))
+			let shipQuantity = parseInt(prompt(`введіть кількість кораблів для гри, але не більше ${Math.floor(cellQuantity/2)}`))
+
+			function buildGameField(cellQuantity) {
+				let cellArr = []
+				for (let i = 0; i < cellQuantity; i++) {
+					cellArr.push(0)				
+				}
+				
+				return cellArr
+			}
+
+			function getRandomItem(cellQuantity) {
+				return Math.floor(Math.random() * cellQuantity)
+			}
+
+			function createShips(shipQuantity) {
+				let shipsArr = buildGameField(cellQuantity)
+				for (let i = 0; i < shipQuantity; i++) {
+					let randomItem = getRandomItem(cellQuantity)
+					if (shipsArr[randomItem] !== 1) shipsArr[randomItem] = 1
+					else i = i - 1
+				}
+				return shipsArr
+			}
+			
+
+			function startGameWar(shipsArr, shipQuantity) {
+				let tryNumber = 0
+				do {
+					let userShoot = parseInt(prompt(`Зробіть постріл, обравши число від 1 до ${cellQuantity}`))
+					if(shipsArr[userShoot - 1] === 1){
+						shipQuantity = shipQuantity - 1
+						alert(`Ви потопили корабель, залишилось ${shipQuantity}`)
+					}
+					tryNumber = tryNumber + 1
+				} while (shipQuantity > 0);
+				return document.write(`<p>Ви перемогли</p>`)
+			}
+
+			let shipsArr = createShips(shipQuantity)
+			let gameWar = startGameWar(shipsArr, shipQuantity)
+
+			
+
+			// 2. Робимо обчислення та виводимо результат
+			
+			</script>
+
+	</body>
+</html>

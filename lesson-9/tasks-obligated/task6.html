@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 6</h1>
+		<p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2</p>
+		<script>
+			const arrayAnyElements = [25,105,169,-87,963,14,21,-56,789,412,3,-157,19,29,79,451,9741]
+
+			function getCurrentArr(arrayAnyElements) {
+				const newArr = [];
+				for (let element of arrayAnyElements) {
+					if(element > arrayAnyElements[0]) newArr.push(element*2) 
+				}
+				return newArr
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let currentArr = document.write(`<p>Дано масив:<br> ${arrayAnyElements}</p><p>Змінений масив:<br> ${getCurrentArr(arrayAnyElements)}</p>`)
+		</script>
+	</body>
+</html>

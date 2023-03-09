@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 1</h1>
+		<p>Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча би одна трійка)).</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let K = parseInt(prompt('Введіть кількість предметів'))
+			let marksSubject = []
+			for (let i = 1; i <= K; i++) {
+				let userMarkSubject = parseInt(prompt(`введіть оцінку за ${i} предмет по 5-бальній системі оцінювання`, 'від 2 до 5'))
+				marksSubject.push(userMarkSubject)
+			}
+			function getMarkSubject(mark) {
+				let marksSum = 0
+				// let counter = 0		
+				for (let i = 0; i < mark.length; i++) {
+					marksSum += mark[i]
+					// counter++
+					}
+					return marksSum / mark.length
+				}
+			
+				function getUserRating(mark) {
+					let result
+				for (let i = 0; i < mark.length; i++)	{
+					if (mark[i] === 5) {result = "Відмінник" 
+					break}
+				else if(mark[i] === 2) {result = "Двієчник"
+				break}
+				else if(mark[i] === 3) {result = "Трієчник"
+				break}
+				else if(mark[i] === 4 || mark[i] === 5 ) {result = "Хорошист"
+				break}
+				else result = "error"
+					}
+				return result
+				}
+				
+			
+			// 2. Робимо обчислення та виводимо результат 
+			let averageMark = getMarkSubject(marksSubject)
+			let userRating = getUserRating(marksSubject)
+			
+			document.write(`
+			<p>Середня оцінка учня: ${averageMark}</p>
+			<p>Учень ${userRating}</p>
+			`)
+
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 13</h1>
+		<p>Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let N = parseInt(prompt('введіть число не більше 5'))
+			let M = parseInt(prompt('введіть число не більше 5'))
+			let userTry = parseInt(prompt(`введіть кількість спроб не більше ${parseInt((N+M)/2)}`))
+			let resultOfFire
+			// 2. Робимо обчислення та виводимо результат
+			let cellField = N * M
+			let shipPositionN = 1 + Math.floor(Math.random() * (N - 1 + 1))
+			let shipPositionM = 1 + Math.floor(Math.random() * (M - 1 + 1))
+			
+		exit: for (let i = 0; i < userTry; i++) {
+			let userChooseN = prompt(`веедіть номер клітинки по N не більше ${N}`)
+			let userChooseM = prompt(`веедіть номер клітинки по M не більше ${M}`)
+				if((userChooseN === shipPositionN) && (userChooseM === shipPositionM)){
+				resultOfFire='Ви перемогли'
+				break exit
+				}
+					else resultOfFire='Ви програли'
+			}
+			document.write(`<p>${resultOfFire}, корабель знаходився за координматами N(${shipPositionN}), M(${shipPositionM})</p>`)
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 8</h1>
+		<p>Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число користувача (використати confirm).</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			const minUserChooseNum = 1
+			const maxUserChooseNum = 12
+			let userChoose
+			const tryCount = 3
+			
+			// 2. Робимо обчислення та виводимо результат
+
+			alert('Загадайте будь яке число від 1 до 12')
+			for (let i = 0; i < tryCount; i++) {
+				let randomNum = minUserChooseNum + Math.floor(Math.random() * (maxUserChooseNum - minUserChooseNum + 1))
+				userChoose = confirm(`Ваше число ${randomNum}`)
+				if (userChoose === true){
+					alert('Ви молодець')
+					break
+				}
+				else alert('спробуйте ще')
+				
+			}
+			if(userChoose === !true){
+					alert('На жаль, Ви не вгадали')
+				}
+							
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 9</h1>
+		<p>Дано масив імен. Сформувати масив з перших літер цих імен.</p>
+		<script>
+			const arrayNamesList = ['Степан','Тарас','Євген','Галина','Михайло','Андрій']
+			
+			function getCurrentArr(arrayNamesList) {
+				const newArr = [];
+				arrayNamesList.forEach((element, index, baseArrRef) => {
+					newArr.push(baseArrRef[index][0])
+				});
+				return newArr
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let currentArr = document.write(`<p>Дано масив:<br> ${arrayNamesList}</p><p>Масив з елементів, які починаються з перших літер цих імен:<br> ${getCurrentArr(arrayNamesList)}</p>`)
+			</script>
+
+	</body>
+</html>

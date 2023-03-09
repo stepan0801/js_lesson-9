@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 8</h1>
+		<p>Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення (тег img повине знаходитись у середині тега a
+			<script>
+						// 1. Вводимо необхідні дані
+			function getSomeBanner(image, title, link) {
+
+				return document.write(`
+				<div class="united">
+					<h3 class="united__title">${title}</h3>
+					<a class="united__link" href=${link} target="_blank"><img src=${image} alt="image"></a>
+				</div>
+				`)
+			}
+			
+			// 2. Робимо обчислення та виводимо результат
+			const bannerLink = "https://www.manutd.com/"
+			const bannerImage = "../../image/3.jpg"
+			const bannerTitle = "Manchester United"
+			
+			let userBanner = getSomeBanner(bannerImage, bannerTitle, bannerLink)
+		</script>
+
+		</body>
+	</html>

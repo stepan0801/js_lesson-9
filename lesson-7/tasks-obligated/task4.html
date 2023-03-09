@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 4</h1>
+		<p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість додатних, кількість більших за 100.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			function getSomeActions(x1, x2, x3) {
+				let pairNum = 0
+				let plusNum = 0
+				let biggerHundredNun = 0
+
+				if (x1%2 === 0) pairNum++
+				if (x2%2 === 0) pairNum++
+				if (x3%2 === 0) pairNum++
+
+				if (x1>0) plusNum++
+				if (x2>0) plusNum++
+				if (x3>0) plusNum++
+
+				if (x1>100) biggerHundredNun++
+				if (x2>100) biggerHundredNun++
+				if (x3>100) biggerHundredNun++
+
+				let actionResult = document.write(`<p>Кількість парних: ${pairNum}</p><p>кількість додатних: ${plusNum}</p><p>кількість, більших за 100: ${biggerHundredNun}</p>`)
+				return actionResult
+			}
+			
+
+			// 2. Робимо обчислення та виводимо результат 
+			const firstNumber = parseFloat(prompt('введіть довільне число'))
+			const secondNumber = parseFloat(prompt('введіть довільне число'))
+			const thirdNumber = parseFloat(prompt('введіть довільне число'))
+			let generalResult = getSomeActions(firstNumber, secondNumber, thirdNumber)
+		</script>
+	</body>
+</html>

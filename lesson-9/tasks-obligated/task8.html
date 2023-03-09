@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 8</h1>
+		<p>Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»</p>
+		<script>
+			const arrayVehicleNumbers = ['АА1542СХ','СВ5436ВК','АА4517ВА','ВА6321РН','АМ4510МА','АА9841АР']
+			const conditionValue = 'А'
+			
+
+			function getCurrentArr(arrayVehicleNumbers) {
+				const newArr = arrayVehicleNumbers.filter(element => element[0] === conditionValue)
+				return newArr
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let currentArr = document.write(`<p>Дано масив:<br> ${arrayVehicleNumbers}</p><p>Масив з елементів, які:<br> ${getCurrentArr(arrayVehicleNumbers)}</p>`)
+		</script>
+
+	</body>
+</html>

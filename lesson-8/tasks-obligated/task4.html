@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 4</h1>
+		<p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які : <br>
+			• починаються на букву «А»; <br>
+			• перша і остання літери співпадають; <br>
+			• складаються з більше ніш 5 символів;</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let vehicleNumberQuantity = parseInt(prompt(`Введіть кількість номерних знаків автомобілів`))
+			let numbersOfVehicles = []
+			for (let i = 1; i <= vehicleNumberQuantity; i++) {
+				let vehicleNumber = prompt(`Введіть номерний знак ${i}го автомобіля`)
+				numbersOfVehicles.push(vehicleNumber)
+			}
+
+			function getNumberBeginA(auto) {
+				let counter = 0
+				for (let i = 0; i < auto.length; i++) {
+					if(auto[i][0] === "А")  counter++
+					else 0
+				}
+				return counter
+			}
+
+			function  getNumberFirstLatterEqaulLast(auto) {
+				let counter = 0
+				for (let i = 0; i < auto.length; i++) {
+					if(auto[i][0] === auto[i][auto[i].length - 1]) counter++
+					else 0
+				}
+				return counter
+			}
+
+			function getNumberLatterBiger_5(auto) {
+				let counter = 0
+				for (let i = 0; i < auto.length; i++) {
+					if([auto[i].length] > 5)  counter++
+					else 0
+				}
+				return counter
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let numberBeginA = getNumberBeginA(numbersOfVehicles)
+			let numberFirstLatterEqaulLast = getNumberFirstLatterEqaulLast(numbersOfVehicles)
+			let numberLatterBiger_5 =  getNumberLatterBiger_5(numbersOfVehicles)
+
+			document.write(`
+			<p>Номерних знаків, що починаються на літеру А: ${numberBeginA}</p>
+			<p>Номерних знаків, в яких перша і остання літери співпадають: ${numberFirstLatterEqaulLast}</p>
+			<p>Номерних знаків, які складаються з більше ніш 5 символів: ${numberLatterBiger_5}</p>
+			`)
+		</script>
+	</body>
+</html>

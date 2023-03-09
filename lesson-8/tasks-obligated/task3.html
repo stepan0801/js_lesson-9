@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 3 </h1>
+		<p>Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let pupilQuantity = parseInt(prompt('Введіть кількість учнів'))
+			let pupilNames = []
+			for (let i = 1; i <= pupilQuantity; i++) {
+				let currentPupilName = prompt(`введіть ім'я ${i}го учня`)
+				pupilNames.push(currentPupilName)
+			}
+
+			function isPupilNameIvan(name) {
+				let counter = 0
+				for (let i = 0; i < name.length; i++) {
+					if(name[i] == "Іван") counter++
+				
+				}
+				return counter
+			}
+			// 2. Робимо обчислення та виводимо результат 
+			let pupilNameIvan = isPupilNameIvan(pupilNames)
+
+			document.write(`<p>Ім'я Іван зустрічається ${pupilNameIvan} рази(ів)</p>`)
+			
+		</script>
+	</body>
+</html>

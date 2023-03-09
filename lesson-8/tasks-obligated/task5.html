@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 5</h1>
+		<p> Дано послідовність оцінок учня. Підрахувати кількість: <br>
+			1) двійок <br>
+			2) кількість хороших оцінок (добре, відмінно); <br>
+			3) кількість оцінок, які нижче середнього.
+		</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let pupilMarksQuantity = parseInt(prompt(`Введіть кількість оцінок учня`))
+			let marksOfPupil = []
+			for (let i = 1; i <= pupilMarksQuantity; i++) {
+				let pupilMark = parseInt(prompt(`Введіть знчення ${i}ї оцінки учня по 5-бальній системі`))
+				marksOfPupil.push(pupilMark)
+			}
+
+			function getPupilMarks_2(mark) {
+				let counter = 0
+				for (let i = 0; i < mark.length; i++) {
+					if(mark[i] === 2)  counter++
+					else 0
+				}
+				return counter
+			}
+
+			function getPupilMarksGood(mark) {
+				let counter = 0
+				for (let i = 0; i < mark.length; i++) {
+					if(mark[i] >= 4)  counter++
+					else 0
+				}
+				return counter
+			}
+
+			function getPupilMarksBad(mark) {
+				let counter = 0
+				for (let i = 0; i < mark.length; i++) {
+					if(mark[i] < 4)  counter++
+					else 0
+				}
+				return counter
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let pupilMarks_2 = getPupilMarks_2(marksOfPupil)
+			let pupilMarksGood = getPupilMarksGood(marksOfPupil)
+			let pupilMarksBad = getPupilMarksBad(marksOfPupil)
+
+
+			document.write(`
+			<p>кількість двійок: ${pupilMarks_2}</p>
+			<p>кількість хороших оцінок: ${pupilMarksGood}</p>
+			<p>кількість оцінок, які нижче середнього: ${pupilMarksBad}</p>
+			`)
+		</script>
+	</body>
+</html>

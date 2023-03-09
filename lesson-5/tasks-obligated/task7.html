@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 7</h1>
+		<p>Вивести на екран N абзаців (N вводиться користувачем) за зразком:</p>
+		<script>
+			// 1. Вводимо необхідні дані
+
+			let userParagraphCount = parseInt(prompt('введіть кількість параграфів'))
+			const  stepPlus  = 1
+			
+			// 2. Робимо обчислення і виводимо результат
+			for(i = 0; i < userParagraphCount; i++){
+				document.write(
+				`<h1 class="task7-title">Загловок ${i+stepPlus}</h1>`
+				)
+				for(j = 0; j<=i; j++) {
+					document.write(
+				`<p class="task7-paragraph">Розділ ${i+stepPlus}, Параграф ${j+stepPlus}</p>`
+					)
+				}
+				document.write(`<hr>`)
+			}
+			
+		</script>
+	</body>
+</html>

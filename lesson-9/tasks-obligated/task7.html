@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 7</h1>
+		<p>Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</p>
+		<script>
+			const arrayProductPrices = [25.30,105,1694,251.19,963,1400,21,5669.87,789,412,3,1579.62,19,2971,79,451.71,9741]
+			const discont = 0.3
+			const conditionValue = 1000
+
+			function getCurrentArr(arrayProductPrices) {
+				const newArr = [];
+				for (let element of arrayProductPrices) {
+					if(element > conditionValue) newArr.push(Math.round(element*(1 - discont) * 100) / 100) 
+					else newArr.push(element) 
+				} 
+				return newArr
+			}
+			// 2. Робимо обчислення та виводимо результат 
+
+			let currentArr = document.write(`<p>Дано масив:<br> ${arrayProductPrices}</p><p>Масив з дисконтними елементами:<br> ${getCurrentArr(arrayProductPrices)}</p>`)
+		</script>
+	</body>
+</html>

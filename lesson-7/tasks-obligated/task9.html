@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 9</h1>
+		<p>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			let userEnterQauntity = parseInt(prompt('Введіть кількість показників температури'))
+			let valuQuantity = 0
+
+			function isTemperatureValue(c) {
+				let result
+			if (c < 0) result = true
+			else result = false 
+				return result
+			}
+			
+				
+			// 2. Робимо обчислення та виводимо результат
+			for (let i = 1; i <= userEnterQauntity; i++) {
+					let userTemperatureValue = parseFloat(prompt(`Введіть показники температури ${i}`, 'С'))
+					valuQuantity = valuQuantity + isTemperatureValue(userTemperatureValue)
+				}
+
+			let generalResult = document.write(`<p>Кількість показників з температурою нище 0: ${valuQuantity}</p>`)
+			
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 6</h1>
+		<p>Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком
+		</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			const tableColumnCount = 3
+			const rowColumnCount = 3
+			let tableCell = 1
+			const maxTableCount = 3
+			// 2. Робимо обчислення та виводимо результат 
+			for (let tableCount = 1; tableCount <= maxTableCount; tableCount++){
+			document.write(`<table>`)
+				for (let rowColumnNum = 1; rowColumnNum <= rowColumnCount; rowColumnNum++){
+				document.write(`<tr>`)
+				for (let tableColumnNum = 1; tableColumnNum <= tableColumnCount; tableColumnNum++) {
+				
+				document.write(
+					`		
+				<td>${tableCell++}</td>
+					`
+					)
+				}
+				document.write(`</tr>`)
+				}
+			document.write(`</table>`)
+			}
+		</script>
+
+	</body>
+</html>

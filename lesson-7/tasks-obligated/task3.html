@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../css/style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Задача 3 </h1>
+		<p> Створити окремі функції, які для 4 чисел знаходять: <br>
+			1)суму;<br>
+			2)добуток;<br>
+			3)середнє арифметичне;<br>
+			4)мінімальне значення. <br>
+		</p>
+		<script>
+			// 1. Вводимо необхідні дані
+			function getSum(x1, x2, x3, x4) {
+				return (x1+x2+x3+x4)
+			}
+			function getProduct(x1, x2, x3, x4) {
+				return (x1*x2*x3*x4)
+			}
+			function getAverage(x1, x2, x3, x4) {
+				return (x1+x2+x3+x4)/4
+			}
+			function getMin(x1, x2, x3, x4) {
+				return Math.min(x1,x2,x3,x4)
+			}
+
+			const firstNumber = parseFloat(prompt('Введіть перше число'))
+			const secondNumber = parseFloat(prompt('Введіть друге число'))
+			const thirdNumber = parseFloat(prompt('Введіть третє число'))
+			const fourthNumber = parseFloat(prompt('Введіть четверте число'))
+			// 2. Робимо обчислення та виводимо результат 
+			const sumResult = getSum(firstNumber, secondNumber, thirdNumber, fourthNumber)
+			const productResult = getProduct(firstNumber, secondNumber, thirdNumber, fourthNumber)
+			const averageResult = getAverage(firstNumber, secondNumber, thirdNumber, fourthNumber)
+			const minResult = getMin(firstNumber, secondNumber, thirdNumber, fourthNumber)
+			document.write(`<p>${sumResult}</p><p>${productResult}</p><p>${averageResult}</p><p>${minResult}</p>`)
+			
+		</script>
+
+	</body>
+</html>
